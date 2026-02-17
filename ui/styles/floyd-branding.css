@@ -697,3 +697,355 @@ button.selected,
 .chat-bubble {
   animation: purplePulse 4s ease-in-out infinite;
 }
+
+/* === CONFIG PAGE STYLING === */
+/* Config layout container */
+.config-layout {
+  background: rgba(106, 0, 153, 0.3) !important;
+  border-color: #9B59FF !important;
+}
+
+/* Config sidebar */
+.config-sidebar {
+  background: rgba(139, 0, 84, 0.95) !important;
+  border-color: #FF007F !important;
+}
+
+.config-sidebar__header,
+.config-sidebar__footer {
+  background: rgba(255, 0, 127, 0.3) !important;
+  border-color: #FF007F !important;
+}
+
+/* Config search */
+.config-search {
+  background: rgba(139, 0, 84, 0.5) !important;
+}
+
+.config-search__input {
+  background: rgba(80, 0, 120, 0.6) !important;
+  border-color: #9B59FF !important;
+  color: #FFFFFF !important;
+}
+
+.config-search__input::placeholder {
+  color: #E0B6FF !important;
+}
+
+.config-search__input:focus {
+  background: rgba(106, 0, 153, 0.8) !important;
+  border-color: #FFD700 !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5) !important;
+}
+
+/* Config nav items */
+.config-nav__item {
+  color: #E0B6FF !important;
+}
+
+.config-nav__item:hover {
+  background: rgba(255, 0, 127, 0.3) !important;
+  color: #FFFFFF !important;
+}
+
+.config-nav__item.active {
+  background: rgba(255, 0, 127, 0.4) !important;
+  color: #FFD700 !important;
+  border-color: #FFD700 !important;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5) !important;
+}
+
+/* Config mode toggle */
+.config-mode-toggle {
+  background: rgba(80, 0, 120, 0.6) !important;
+  border-color: #9B59FF !important;
+}
+
+.config-mode-toggle__btn {
+  color: #E0B6FF !important;
+}
+
+.config-mode-toggle__btn.active {
+  background: #FF6600 !important;
+  color: #FFFFFF !important;
+  border-color: #FFD700 !important;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5) !important;
+}
+
+/* Config main area */
+.config-main {
+  background: rgba(106, 0, 153, 0.2) !important;
+}
+
+.config-actions {
+  background: rgba(139, 0, 84, 0.5) !important;
+  border-color: #FF007F !important;
+}
+
+/* Config diff/changes */
+.config-diff {
+  background: rgba(191, 0, 255, 0.2) !important;
+  border-color: #BF00FF !important;
+}
+
+.config-diff__summary {
+  color: #FFD700 !important;
+}
+
+.config-diff__item {
+  background: rgba(106, 0, 153, 0.6) !important;
+}
+
+/* Config section hero */
+.config-section-hero {
+  background: rgba(139, 0, 84, 0.5) !important;
+  border-color: #FF007F !important;
+}
+
+.config-section-hero__icon {
+  color: #FFD700 !important;
+}
+
+.config-section-hero__title {
+  color: #FFFFFF !important;
+}
+
+/* Config subnav */
+.config-subnav {
+  background: rgba(139, 0, 84, 0.5) !important;
+}
+
+.config-subnav__item {
+  background: rgba(80, 0, 120, 0.6) !important;
+  color: #E0B6FF !important;
+  border-color: #9B59FF !important;
+}
+
+.config-subnav__item:hover {
+  background: rgba(106, 0, 153, 0.8) !important;
+  color: #FFFFFF !important;
+  border-color: #BF00FF !important;
+}
+
+.config-subnav__item.active {
+  background: #FF6600 !important;
+  color: #FFFFFF !important;
+  border-color: #FFD700 !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6) !important;
+}
+
+/* Config content area */
+.config-content {
+  background: transparent !important;
+}
+
+/* Config form elements */
+.cfg-field__label {
+  color: #FFFFFF !important;
+}
+
+.cfg-field__help {
+  color: #E0B6FF !important;
+}
+
+.cfg-field__error {
+  color: #FF6600 !important;
+}
+
+/* Config inputs */
+.cfg-input,
+.cfg-textarea,
+.cfg-select,
+.cfg-number {
+  background: rgba(80, 0, 120, 0.6) !important;
+  border-color: #9B59FF !important;
+  color: #FFFFFF !important;
+}
+
+.cfg-input:focus,
+.cfg-textarea:focus,
+.cfg-select:focus {
+  background: rgba(106, 0, 153, 0.8) !important;
+  border-color: #FFD700 !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5) !important;
+}
+
+.cfg-input__reset {
+  background: rgba(106, 0, 153, 0.6) !important;
+  border-color: #9B59FF !important;
+  color: #E0B6FF !important;
+}
+
+.cfg-input__reset:hover {
+  background: rgba(127, 0, 178, 0.8) !important;
+  border-color: #BF00FF !important;
+}
+
+/* Config number input */
+.cfg-number {
+  background: rgba(80, 0, 120, 0.6) !important;
+  border-color: #9B59FF !important;
+}
+
+.cfg-number__btn {
+  background: rgba(106, 0, 153, 0.6) !important;
+  color: #E0B6FF !important;
+}
+
+.cfg-number__btn:hover {
+  background: rgba(127, 0, 178, 0.8) !important;
+}
+
+/* Config segmented control */
+.cfg-segmented {
+  background: rgba(80, 0, 120, 0.6) !important;
+  border-color: #9B59FF !important;
+}
+
+.cfg-segmented__btn {
+  color: #E0B6FF !important;
+}
+
+.cfg-segmented__btn.active {
+  background: #FF6600 !important;
+  color: #FFFFFF !important;
+  border-color: #FFD700 !important;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5) !important;
+}
+
+/* Config toggle row */
+.cfg-toggle-row {
+  background: rgba(106, 0, 153, 0.6) !important;
+  border-color: #9B59FF !important;
+}
+
+.cfg-toggle-row:hover {
+  background: rgba(127, 0, 178, 0.8) !important;
+  border-color: #BF00FF !important;
+}
+
+.cfg-toggle-row__label {
+  color: #FFFFFF !important;
+}
+
+.cfg-toggle-row__help {
+  color: #E0B6FF !important;
+}
+
+/* Config toggle */
+.cfg-toggle__track {
+  background: rgba(80, 0, 120, 0.6) !important;
+  border-color: #9B59FF !important;
+}
+
+.cfg-toggle input:checked + .cfg-toggle__track {
+  background: rgba(255, 102, 0, 0.6) !important;
+  border-color: #FFD700 !important;
+}
+
+.cfg-toggle input:checked + .cfg-toggle__track:after {
+  background: #FFD700 !important;
+}
+
+/* Config objects and arrays */
+.cfg-object,
+.cfg-array,
+.cfg-map {
+  background: rgba(106, 0, 153, 0.5) !important;
+  border-color: #9B59FF !important;
+}
+
+.cfg-object__header,
+.cfg-array__header,
+.cfg-map__header {
+  background: rgba(139, 0, 84, 0.7) !important;
+  border-color: #FF007F !important;
+}
+
+.cfg-object__title,
+.cfg-array__label,
+.cfg-map__label {
+  color: #FFFFFF !important;
+}
+
+.cfg-object__help,
+.cfg-array__help,
+.cfg-map__help {
+  color: #E0B6FF !important;
+}
+
+.cfg-object__content,
+.cfg-array__items,
+.cfg-map__items {
+  background: rgba(80, 0, 120, 0.3) !important;
+}
+
+/* Config array items */
+.cfg-array__item {
+  background: rgba(106, 0, 153, 0.6) !important;
+  border-color: #9B59FF !important;
+}
+
+.cfg-array__item-header {
+  background: rgba(139, 0, 84, 0.5) !important;
+  border-color: #FF007F !important;
+}
+
+.cfg-array__item-index {
+  color: #E0B6FF !important;
+}
+
+/* Config buttons */
+.cfg-array__add,
+.cfg-map__add {
+  background: rgba(106, 0, 153, 0.6) !important;
+  border-color: #9B59FF !important;
+  color: #FFFFFF !important;
+}
+
+.cfg-array__add:hover,
+.cfg-map__add:hover {
+  background: #FF6600 !important;
+  border-color: #FFD700 !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5) !important;
+}
+
+.cfg-array__item-remove {
+  color: #E0B6FF !important;
+}
+
+.cfg-array__item-remove:hover {
+  background: rgba(255, 0, 0, 0.4) !important;
+  color: #FF6600 !important;
+}
+
+/* Config empty states */
+.config-empty,
+.cfg-array__empty,
+.cfg-map__empty {
+  color: #E0B6FF !important;
+}
+
+/* Fix red text on buttons - ensure white text on active/primary buttons */
+button.btn,
+.btn-primary,
+.btn.primary {
+  color: #FFFFFF !important;
+}
+
+button.btn:active,
+.btn.active,
+.btn:active {
+  color: #FFFFFF !important;
+}
+
+/* Config status badge */
+.config-changes-badge {
+  background: rgba(255, 102, 0, 0.6) !important;
+  border-color: #FFD700 !important;
+  color: #FFFFFF !important;
+}
+
+.config-status {
+  color: #E0B6FF !important;
+}
