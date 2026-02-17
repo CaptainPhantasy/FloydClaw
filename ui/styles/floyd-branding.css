@@ -259,30 +259,30 @@ a:hover {
   color: #FFFFFF !important;
 }
 
-/* === NEON PURPLE FLOATING FRAMES === */
-/* Cards, panels, and content containers use neon purple */
+/* === NEON PURPLE FLOATING FRAMES WITH CYAN GLOW OUTLINE === */
+/* Cards, panels, and content containers use neon purple with cyan border */
 .card {
   background: rgba(106, 0, 153, 0.85) !important;
-  border-color: #9B59FF !important;
-  box-shadow: 0 0 20px rgba(191, 0, 255, 0.3), 0 0 0 1px rgba(155, 89, 255, 0.4) !important;
+  border: 2px solid #00FFFF !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 0 1px rgba(0, 255, 255, 0.3) !important;
 }
 
 .card:hover {
   background: rgba(127, 0, 178, 0.9) !important;
-  border-color: #BF00FF !important;
-  box-shadow: 0 0 30px rgba(191, 0, 255, 0.5), 0 0 0 1px rgba(155, 89, 255, 0.6) !important;
+  border-color: #00FFFF !important;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.7), 0 0 0 1px rgba(0, 255, 255, 0.5) !important;
 }
 
 .config-section-card {
   background: rgba(106, 0, 153, 0.75) !important;
-  border-color: #9B59FF !important;
-  box-shadow: 0 0 20px rgba(191, 0, 255, 0.25) !important;
+  border: 2px solid #00FFFF !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 0 1px rgba(0, 255, 255, 0.3) !important;
 }
 
 .config-section-card:hover {
   background: rgba(127, 0, 178, 0.85) !important;
-  border-color: #BF00FF !important;
-  box-shadow: 0 0 25px rgba(191, 0, 255, 0.4) !important;
+  border-color: #00FFFF !important;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6), 0 0 0 1px rgba(0, 255, 255, 0.4) !important;
 }
 
 /* Headers - cyan */
@@ -303,12 +303,12 @@ h1, h2, h3 {
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.8) !important;
 }
 
-/* Chat container - neon purple frame */
+/* Chat container - neon purple frame with cyan outline */
 .chat-thread,
 .chat {
   background: rgba(106, 0, 153, 0.4) !important;
-  border: 1px solid rgba(155, 89, 255, 0.5) !important;
-  box-shadow: 0 0 20px rgba(191, 0, 255, 0.2) !important;
+  border: 2px solid #00FFFF !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), 0 0 0 1px rgba(0, 255, 255, 0.3) !important;
 }
 
 /* Message backgrounds - neon purple tint */
@@ -348,14 +348,14 @@ h1, h2, h3 {
   box-shadow: 0 0 15px rgba(191, 0, 255, 0.3) !important;
 }
 
-/* Panel/overlay elements - neon purple */
+/* Panel/overlay elements - neon purple with cyan outline */
 .panel,
 .popover,
 .dropdown-menu,
 .sidebar-panel {
   background: rgba(106, 0, 153, 0.9) !important;
-  border-color: #9B59FF !important;
-  box-shadow: 0 0 25px rgba(191, 0, 255, 0.4) !important;
+  border: 2px solid #00FFFF !important;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5), 0 0 0 1px rgba(0, 255, 255, 0.3) !important;
 }
 
 /* === FLAME-GLASS EFFECTS === */
@@ -656,15 +656,17 @@ button.selected,
 }
 
 /* === HEADER & NAV STAY FUCHSIA (for contrast) === */
+/* Neon blue glowing outline around header and nav */
 .topbar {
   background: rgba(139, 0, 84, 0.98) !important;
-  border-bottom-color: #FF007F !important;
-  box-shadow: 0 0 20px rgba(255, 0, 127, 0.3) !important;
+  border-bottom: 2px solid #00FFFF !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 0 1px rgba(0, 255, 255, 0.3) !important;
 }
 
 .nav {
   background: rgba(139, 0, 84, 0.95) !important;
-  border-right-color: #FF007F !important;
+  border-right: 2px solid #00FFFF !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 0 1px rgba(0, 255, 255, 0.3) !important;
 }
 
 .nav-item:hover {
