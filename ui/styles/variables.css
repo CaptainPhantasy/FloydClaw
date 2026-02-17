@@ -1,0 +1,174 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * FLOYD THE PHISH DESIGN TOKENS
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * Single source of truth for all design values.
+ * Import this FIRST in your global stylesheet.
+ *
+ * Usage: @import './variables.css';
+ */
+
+:root {
+  /* ═══════════════════════════════════════════════════════════════════════
+   * COLOR SYSTEM - Floyd the Phish Brand Palette
+   * ═══════════════════════════════════════════════════════════════════════ */
+  
+  /* Primary Brand Colors */
+  --color-burgundy-deep: #6A0040;
+  --color-burgundy-rich: #8B0054;
+  --color-burgundy-light: #A80064;
+  
+  /* Accent Colors */
+  --color-accent-pink: #FF007F;
+  --color-accent-pink-bright: #FF3399;
+  --color-accent-cyan: #00FFFF;
+  --color-accent-cyan-dim: #00CCCC;
+  
+  /* Flame Gradient Colors (Active State) */
+  --color-flame-white: #FFFFFF;
+  --color-flame-red: #FF0000;
+  --color-flame-yellow: #FFD700;
+  --color-flame-orange: #FF8C00;
+  
+  /* Neutral Colors */
+  --color-white: #FFFFFF;
+  --color-white-80: rgba(255, 255, 255, 0.8);
+  --color-white-60: rgba(255, 255, 255, 0.6);
+  --color-white-40: rgba(255, 255, 255, 0.4);
+  --color-white-20: rgba(255, 255, 255, 0.2);
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  
+  --color-black: #000000;
+  --color-black-15: rgba(0, 0, 0, 0.15);
+  --color-black-25: rgba(0, 0, 0, 0.25);
+  --color-black-40: rgba(0, 0, 0, 0.4);
+  --color-black-80: rgba(0, 0, 0, 0.8);
+  
+  /* Glassmorphism */
+  --glass-burgundy: rgba(106, 0, 64, 0.4);
+  --glass-burgundy-dark: rgba(106, 0, 64, 0.6);
+  --glass-black: rgba(0, 0, 0, 0.15);
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * TYPOGRAPHY
+   * ═══════════════════════════════════════════════════════════════════════ */
+  
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+  
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.85rem;    /* 13.6px */
+  --font-size-base: 0.95rem;  /* 15.2px */
+  --font-size-lg: 1rem;       /* 16px */
+  --font-size-xl: 1.125rem;   /* 18px */
+  --font-size-2xl: 1.25rem;   /* 20px */
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-widest: 0.1em;
+  
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * SPACING SCALE
+   * ═══════════════════════════════════════════════════════════════════════ */
+  
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * BORDER RADIUS
+   * ═══════════════════════════════════════════════════════════════════════ */
+  
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 14px;
+  --radius-full: 9999px;
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * SHADOWS
+   * ═══════════════════════════════════════════════════════════════════════ */
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.4);
+  
+  /* Focus ring */
+  --shadow-focus-pink: 0 4px 12px rgba(255, 0, 127, 0.15);
+  --shadow-focus-cyan: 0 4px 12px rgba(0, 255, 255, 0.15);
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * TRANSITIONS
+   * ═══════════════════════════════════════════════════════════════════════ */
+  
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+  --transition-all: all 0.2s ease-in-out;
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * Z-INDEX SCALE
+   * ═══════════════════════════════════════════════════════════════════════ */
+  
+  --z-behind: -1;
+  --z-base: 0;
+  --z-elevated: 10;
+  --z-overlay: 20;
+  --z-modal: 30;
+  --z-tooltip: 40;
+  --z-top: 50;
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * COMPONENT-SPECIFIC TOKENS
+   * ═══════════════════════════════════════════════════════════════════════ */
+  
+  /* Card */
+  --card-bg: var(--color-burgundy-deep);
+  --card-bg-hover: var(--color-burgundy-rich);
+  --card-bg-glass: var(--glass-burgundy);
+  --card-radius: var(--radius-xl);
+  --card-padding: var(--space-4);
+  
+  /* Input */
+  --input-bg: var(--glass-black);
+  --input-bg-focus: var(--color-black-25);
+  --input-border: transparent;
+  --input-border-bottom: var(--color-white-10);
+  --input-border-focus: var(--color-accent-pink);
+  --input-radius: var(--radius-md);
+  --input-padding: var(--space-3) var(--space-4);
+  
+  /* Label */
+  --label-color: var(--color-white-80);
+  --label-size: var(--font-size-sm);
+  --label-weight: var(--font-weight-medium);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * DARK MODE OVERRIDES (if needed)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Already dark-first, but can add adjustments here */
+  }
+}

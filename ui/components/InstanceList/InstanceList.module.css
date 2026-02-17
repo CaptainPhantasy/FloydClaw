@@ -1,0 +1,148 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * INSTANCE LIST STYLES
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+.instanceList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * INSTANCE ROW
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+.instanceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.instanceRow:hover {
+  background: rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(4px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * INSTANCE LEFT SIDE
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+.instanceLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.instanceName {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.instanceTags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.instanceTag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 0, 127, 0.2);
+  border: 1px solid rgba(255, 0, 127, 0.3);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * INSTANCE RIGHT SIDE
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+.instanceRight {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.instanceTime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.instanceTimeLabel {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.instanceTimeValue {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-family: var(--font-family-mono, monospace);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * INSTANCE STATUS
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+.instanceStatus {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.instanceStatusOnline {
+  background: #00FF00;
+  box-shadow: 0 0 8px #00FF00;
+}
+
+.instanceStatusOffline {
+  background: #FF0000;
+  box-shadow: 0 0 8px #FF0000;
+}
+
+.instanceStatusIdle {
+  background: #FFD700;
+  box-shadow: 0 0 8px #FFD700;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * RESPONSIVE DESIGN
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .instanceRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .instanceRight {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .instanceTime {
+    align-items: flex-start;
+  }
+}

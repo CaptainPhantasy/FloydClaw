@@ -1,0 +1,310 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * CRON JOB FORM STYLES
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 
+ * CSS Grid-based form layout with strict 2-column structure.
+ * 
+ * ARCHITECTURE RULES:
+ *   1. The FORM is the grid container - no nested wrapper divs
+ *   2. Each input group is a direct child of the grid
+ *   3. Use .colSpanFull for full-width fields
+ *   4. Checkbox groups have special padding for vertical alignment
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * FORM CONTAINER
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.cronFormContainer {
+  background: var(--color-burgundy-deep, #6A0040);
+  border-radius: var(--radius-xl, 12px);
+  padding: var(--space-8, 32px);
+  box-shadow: var(--shadow-lg, 0 8px 32px rgba(0, 0, 0, 0.3));
+  color: var(--color-white, #FFFFFF);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * HEADER SECTION
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.cronFormHeader {
+  margin-bottom: var(--space-6, 24px);
+}
+
+.cronFormTitle {
+  font-size: var(--font-size-xl, 1.125rem);
+  font-weight: var(--font-weight-bold, 700);
+  margin-bottom: var(--space-1, 4px);
+  color: var(--color-white, #FFFFFF);
+}
+
+.cronFormDescription {
+  font-size: var(--font-size-sm, 0.85rem);
+  color: var(--color-white-60, rgba(255, 255, 255, 0.6));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * GRID LAYOUT
+ * 
+ * CRITICAL: 2 equal columns with strict gap spacing.
+ * Do NOT wrap rows in divs - the grid handles layout directly.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.cronFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--space-8, 32px);
+  row-gap: var(--space-6, 24px);
+}
+
+/* Full-width field utility */
+.colSpanFull {
+  grid-column: 1 / -1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * INPUT GROUP
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.cronInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * LABEL STYLING
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.cronLabel {
+  color: var(--color-white-80, rgba(255, 255, 255, 0.8));
+  font-size: var(--font-size-sm, 0.85rem);
+  font-weight: var(--font-weight-medium, 500);
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * INPUT & SELECT STYLING
+ * 
+ * The "Invisible" look - dark inset glass with subtle underline.
+ * Focus state reveals the accent color.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.cronInput,
+.cronSelect {
+  background: var(--glass-black, rgba(0, 0, 0, 0.15));
+  border: 1px solid transparent;
+  border-bottom: 2px solid var(--color-white-10, rgba(255, 255, 255, 0.1));
+  color: var(--color-white, #FFFFFF);
+  padding: var(--space-3, 12px) var(--space-4, 16px);
+  border-radius: var(--radius-md, 6px);
+  font-size: var(--font-size-base, 0.95rem);
+  transition: var(--transition-base, 0.2s ease);
+  outline: none;
+  width: 100%;
+}
+
+/* Remove default select arrow for custom styling */
+.cronSelect {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23FFFFFF' fill-opacity='0.6' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* Placeholder styling */
+.cronInput::placeholder {
+  color: var(--color-white-40, rgba(255, 255, 255, 0.4));
+}
+
+/* Focus states */
+.cronInput:focus,
+.cronSelect:focus {
+  background: var(--color-black-25, rgba(0, 0, 0, 0.25));
+  border-bottom-color: var(--color-accent-pink, #FF007F);
+  box-shadow: var(--shadow-focus-pink, 0 4px 12px rgba(255, 0, 127, 0.15));
+}
+
+/* Special cyan text variant (for fixed values like Agent ID) */
+.cronInputCyan {
+  color: var(--color-accent-cyan, #00FFFF);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * TEXTAREA STYLING
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.cronTextarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: var(--font-family-sans);
+  line-height: var(--line-height-relaxed, 1.75);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * CHECKBOX GROUP
+ * 
+ * CRITICAL: Special padding-top aligns checkbox with adjacent inputs.
+ * Without this, checkboxes sit higher than text inputs and look misaligned.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.cronCheckboxGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  /* Aligns checkbox with input fields instead of labels */
+  padding-top: 28px;
+}
+
+.cronCheckbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-white-40, rgba(255, 255, 255, 0.4));
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition-fast, 150ms ease);
+}
+
+.cronCheckbox:checked {
+  background: var(--color-accent-cyan, #00FFFF);
+  border-color: var(--color-accent-cyan, #00FFFF);
+}
+
+.cronCheckbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--color-burgundy-deep, #6A0040);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.cronCheckbox:focus-visible {
+  outline: 2px solid var(--color-accent-cyan, #00FFFF);
+  outline-offset: 2px;
+}
+
+.cronCheckbox:hover:not(:checked) {
+  border-color: var(--color-white-60, rgba(255, 255, 255, 0.6));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * NUMBER INPUT
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.cronInput[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.cronInput[type="number"]::-webkit-outer-spin-button,
+.cronInput[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * BUTTON GROUP
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.cronFormActions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3, 12px);
+  margin-top: var(--space-4, 16px);
+}
+
+.cronButton {
+  padding: var(--space-3, 12px) var(--space-6, 24px);
+  border-radius: var(--radius-md, 6px);
+  font-size: var(--font-size-sm, 0.85rem);
+  font-weight: var(--font-weight-semibold, 600);
+  cursor: pointer;
+  transition: var(--transition-base, 0.2s ease);
+}
+
+.cronButtonPrimary {
+  background: var(--color-accent-pink, #FF007F);
+  color: var(--color-white, #FFFFFF);
+  border: none;
+}
+
+.cronButtonPrimary:hover {
+  background: var(--color-accent-pink-bright, #FF3399);
+  box-shadow: 0 4px 16px rgba(255, 0, 127, 0.4);
+}
+
+.cronButtonSecondary {
+  background: transparent;
+  color: var(--color-white-80, rgba(255, 255, 255, 0.8));
+  border: 1px solid var(--color-white-20, rgba(255, 255, 255, 0.2));
+}
+
+.cronButtonSecondary:hover {
+  background: var(--color-white-10, rgba(255, 255, 255, 0.1));
+  border-color: var(--color-white-40, rgba(255, 255, 255, 0.4));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * ERROR STATE
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.cronInputError {
+  border-bottom-color: #FF4444;
+}
+
+.cronErrorText {
+  color: #FF6666;
+  font-size: var(--font-size-xs, 0.75rem);
+  margin-top: var(--space-1, 4px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * HELPER TEXT
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.cronHelperText {
+  color: var(--color-white-40, rgba(255, 255, 255, 0.4));
+  font-size: var(--font-size-xs, 0.75rem);
+  margin-top: var(--space-1, 4px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * RESPONSIVE ADJUSTMENTS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .cronFormGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .colSpanFull {
+    grid-column: 1;
+  }
+  
+  .cronCheckboxGroup {
+    padding-top: 0;
+    margin-top: var(--space-2, 8px);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * REDUCED MOTION
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .cronInput,
+  .cronSelect,
+  .cronCheckbox,
+  .cronButton {
+    transition: none;
+  }
+}

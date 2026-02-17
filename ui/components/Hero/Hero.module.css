@@ -1,0 +1,350 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * HERO SECTION STYLES
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 
+ * Full-bleed hero with flame-glass image container.
+ * 
+ * LAYERS:
+ *   1. Background gradient (dark burgundy to black)
+ *   2. Ambient glow effects
+ *   3. Image container with flame border
+ *   4. Content overlay
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * HERO CONTAINER
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12, 48px) var(--space-6, 24px);
+  overflow: hidden;
+  
+  /* Deep gradient background */
+  background: linear-gradient(
+    180deg,
+    #1a0010 0%,
+    #0d0008 50%,
+    #050003 100%
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * AMBIENT GLOW BACKGROUND
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.heroAmbient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroAmbient::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 127, 0.15) 0%,
+    rgba(255, 0, 0, 0.1) 30%,
+    transparent 70%
+  );
+  filter: blur(60px);
+}
+
+.heroAmbient::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.1) 0%,
+    transparent 60%
+  );
+  filter: blur(40px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * IMAGE CONTAINER - FLAME GLASS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.heroImageWrapper {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-8, 32px);
+}
+
+.heroImageContainer {
+  position: relative;
+  border-radius: 24px;
+  padding: 4px;
+  z-index: 1;
+  
+  /* The Flame Glow */
+  box-shadow:
+    0 0 30px rgba(255, 0, 0, 0.6),
+    0 0 60px rgba(255, 215, 0, 0.35),
+    0 0 100px rgba(255, 140, 0, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+/* Flame Border via ::before */
+.heroImageContainer::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 27px;
+  background: linear-gradient(
+    180deg,
+    #FFFFFF 0%,
+    #FF3333 25%,
+    #FF0000 50%,
+    #FF8C00 75%,
+    #FFD700 100%
+  );
+  z-index: -1;
+}
+
+/* Animated flame pulse */
+.heroImageContainerAnimated {
+  animation: heroFlamePulse 3s ease-in-out infinite;
+}
+
+@keyframes heroFlamePulse {
+  0%, 100% {
+    box-shadow:
+      0 0 30px rgba(255, 0, 0, 0.6),
+      0 0 60px rgba(255, 215, 0, 0.35),
+      0 0 100px rgba(255, 140, 0, 0.2),
+      inset 0 0 20px rgba(255, 255, 255, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 40px rgba(255, 0, 0, 0.75),
+      0 0 80px rgba(255, 215, 0, 0.5),
+      0 0 120px rgba(255, 140, 0, 0.3),
+      inset 0 0 25px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * IMAGE
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.heroImage {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 280px;
+  max-height: 280px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.heroImageLarge {
+  max-width: 360px;
+  max-height: 360px;
+}
+
+.heroImageSmall {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * CONTENT
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 600px;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: var(--font-weight-bold, 700);
+  line-height: var(--line-height-tight, 1.25);
+  color: var(--color-white, #FFFFFF);
+  margin-bottom: var(--space-4, 16px);
+  text-shadow:
+    0 0 30px rgba(255, 0, 0, 0.4),
+    0 0 60px rgba(255, 215, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.heroTitleAccent {
+  background: linear-gradient(
+    135deg,
+    #FFFFFF 0%,
+    #FF007F 50%,
+    #FFD700 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: var(--font-size-lg, 1rem);
+  color: var(--color-white-60, rgba(255, 255, 255, 0.6));
+  line-height: var(--line-height-relaxed, 1.75);
+  margin-bottom: var(--space-6, 24px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * CTA BUTTONS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.heroActions {
+  display: flex;
+  gap: var(--space-4, 16px);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.heroButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  padding: var(--space-3, 12px) var(--space-6, 24px);
+  border-radius: var(--radius-lg, 8px);
+  font-size: var(--font-size-base, 0.95rem);
+  font-weight: var(--font-weight-semibold, 600);
+  cursor: pointer;
+  transition: var(--transition-all, all 0.2s ease-in-out);
+  text-decoration: none;
+}
+
+.heroButtonPrimary {
+  background: linear-gradient(135deg, #FF007F 0%, #FF3399 100%);
+  color: var(--color-white, #FFFFFF);
+  border: none;
+  box-shadow: 0 4px 20px rgba(255, 0, 127, 0.4);
+}
+
+.heroButtonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(255, 0, 127, 0.6);
+}
+
+.heroButtonSecondary {
+  background: transparent;
+  color: var(--color-white, #FFFFFF);
+  border: 2px solid var(--color-white-20, rgba(255, 255, 255, 0.2));
+}
+
+.heroButtonSecondary:hover {
+  border-color: var(--color-accent-cyan, #00FFFF);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * BADGE / TAG
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  padding: var(--space-2, 8px) var(--space-4, 16px);
+  background: rgba(255, 0, 127, 0.15);
+  border: 1px solid rgba(255, 0, 127, 0.3);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--font-size-sm, 0.85rem);
+  color: var(--color-accent-pink, #FF007F);
+  margin-bottom: var(--space-4, 16px);
+}
+
+.heroBadgeIcon {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent-pink, #FF007F);
+  border-radius: 50%;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * SIZE VARIANTS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.heroCompact {
+  min-height: 280px;
+  padding: var(--space-8, 32px) var(--space-4, 16px);
+}
+
+.heroLarge {
+  min-height: 600px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * RESPONSIVE
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 320px;
+    padding: var(--space-8, 32px) var(--space-4, 16px);
+  }
+  
+  .heroImage {
+    max-width: 200px;
+    max-height: 200px;
+  }
+  
+  .heroImageLarge {
+    max-width: 240px;
+    max-height: 240px;
+  }
+  
+  .heroActions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .heroButton {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * REDUCED MOTION
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .heroImageContainerAnimated {
+    animation: none;
+  }
+  
+  .heroBadgeIcon {
+    animation: none;
+  }
+  
+  .heroButton {
+    transition: none;
+  }
+}

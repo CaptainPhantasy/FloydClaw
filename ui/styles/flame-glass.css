@@ -1,0 +1,273 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * FLAME-GLASS ENGINE
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 
+ * The aggressive Red/Yellow/White flame edge with glassmorphism glow.
+ * 
+ * ARCHITECTURE:
+ *   1. Glassmorphism base with semi-transparent background + backdrop blur
+ *   2. ::before pseudo-element creates the flame gradient border
+ *   3. box-shadow creates the multi-layered glow effect
+ *   4. z-index stacking keeps content above the flame border
+ * 
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * BASE FLAME-GLASS CARD
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.flameGlassActive {
+  position: relative;
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * LAYER 1: Glassmorphism Base
+   * 
+   * CRITICAL: Background MUST use rgba() with alpha < 1.0
+   * Solid hex codes will break the glass effect instantly.
+   * ═══════════════════════════════════════════════════════════════════════ */
+  background: rgba(106, 0, 64, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); /* Safari support */
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * LAYER 2: Structure
+   * ═══════════════════════════════════════════════════════════════════════ */
+  border-radius: var(--radius-xl, 12px);
+  padding: var(--space-4, 16px);
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * LAYER 3: The Glow Engine
+   * 
+   * Three-part shadow creates the flame aura:
+   *   1. Deep red inner-outer glow (15px spread)
+   *   2. Broad yellow ambient glow (30px spread)
+   *   3. White internal glass reflection (inset)
+   * ═══════════════════════════════════════════════════════════════════════ */
+  box-shadow:
+    /* Deep Red glow - the core flame intensity */
+    0 0 15px rgba(255, 0, 0, 0.7),
+    /* Broad Yellow ambient - the heat halo */
+    0 0 30px rgba(255, 215, 0, 0.4),
+    /* White internal reflection - the glass depth */
+    inset 0 0 12px rgba(255, 255, 255, 0.3);
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * STACKING CONTEXT
+   * 
+   * CRITICAL: This z-index creates a new stacking context.
+   * The ::before flame border uses z-index: -1 to sit BEHIND this content.
+   * DO NOT REMOVE or the card becomes a solid color block.
+   * ═══════════════════════════════════════════════════════════════════════ */
+  z-index: 1;
+  
+  /* Text contrast against the glow */
+  color: var(--color-white, #FFFFFF);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * FLAME EDGE BORDER (The ::before Pseudo-element)
+ * 
+ * This creates the actual gradient border that wraps around the card.
+ * It sits BEHIND the glassmorphism base via z-index: -1.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.flameGlassActive::before {
+  content: "";
+  position: absolute;
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * POSITIONING
+   * 
+   * inset: -2px pulls the gradient 2px outside the card bounds.
+   * This creates the "border" effect around the rounded corners.
+   * 
+   * CRITICAL: border-radius must be 2px larger than the card's radius
+   * to maintain visual consistency at the corners.
+   * Card radius = 12px, this radius = 14px
+   * ═══════════════════════════════════════════════════════════════════════ */
+  inset: -2px;
+  border-radius: var(--radius-2xl, 14px);
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * THE FLAME GRADIENT
+   * 
+   * White hot top → Burning red middle → Bright yellow base
+   * This creates the visual impression of heat rising.
+   * ═══════════════════════════════════════════════════════════════════════ */
+  background: linear-gradient(
+    180deg,
+    #FFFFFF 0%,    /* White hot - maximum intensity at top */
+    #FF0000 40%,   /* Deep burning red - the core flame */
+    #FFD700 100%   /* Bright yellow - the warm base */
+  );
+  
+  /* ═══════════════════════════════════════════════════════════════════════
+   * STACKING
+   * 
+   * CRITICAL: z-index: -1 pushes this BEHIND the parent's background.
+   * The parent's glassmorphism layer sits ON TOP of this gradient,
+   * allowing only the 2px "border" portion to show through.
+   * ═══════════════════════════════════════════════════════════════════════ */
+  z-index: -1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * HOVER STATE - Make it feel alive
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.flameGlassActive:hover {
+  /* Intensify the glow on hover */
+  box-shadow:
+    0 0 20px rgba(255, 0, 0, 0.9),      /* Stronger red */
+    0 0 40px rgba(255, 215, 0, 0.6),    /* Broader yellow */
+    inset 0 0 15px rgba(255, 255, 255, 0.5); /* More internal reflection */
+  
+  /* Subtle lift effect */
+  transform: translateY(-1px);
+  
+  /* Smooth transition */
+  transition: all 0.2s ease-in-out;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * FOCUS STATE - Accessibility
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.flameGlassActive:focus-visible {
+  outline: 2px solid var(--color-accent-cyan, #00FFFF);
+  outline-offset: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * ACTIVE STATE - Click feedback
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.flameGlassActive:active {
+  transform: translateY(0);
+  box-shadow:
+    0 0 12px rgba(255, 0, 0, 0.6),
+    0 0 24px rgba(255, 215, 0, 0.3),
+    inset 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * ANIMATED FLAME VARIANT (Optional)
+ * 
+ * Use .flameGlassAnimated for a subtle pulse effect.
+ * WARNING: Use sparingly - can cause performance issues if overused.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.flameGlassAnimated {
+  animation: flamePulse 2s ease-in-out infinite;
+}
+
+@keyframes flamePulse {
+  0%, 100% {
+    box-shadow:
+      0 0 15px rgba(255, 0, 0, 0.7),
+      0 0 30px rgba(255, 215, 0, 0.4),
+      inset 0 0 12px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(255, 0, 0, 0.85),
+      0 0 40px rgba(255, 215, 0, 0.55),
+      inset 0 0 15px rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * INTENSITY VARIANTS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Subtle flame - for less prominent active states */
+.flameGlassSubtle {
+  background: rgba(106, 0, 64, 0.35);
+  box-shadow:
+    0 0 10px rgba(255, 0, 0, 0.5),
+    0 0 20px rgba(255, 215, 0, 0.25),
+    inset 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.flameGlassSubtle::before {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 0, 0, 0.8) 40%,
+    rgba(255, 215, 0, 0.9) 100%
+  );
+}
+
+/* Intense flame - for critical alerts or primary actions */
+.flameGlassIntense {
+  background: rgba(106, 0, 64, 0.5);
+  box-shadow:
+    0 0 25px rgba(255, 0, 0, 0.85),
+    0 0 50px rgba(255, 215, 0, 0.5),
+    0 0 80px rgba(255, 140, 0, 0.3),
+    inset 0 0 18px rgba(255, 255, 255, 0.4);
+}
+
+.flameGlassIntense::before {
+  background: linear-gradient(
+    180deg,
+    #FFFFFF 0%,
+    #FF3333 35%,
+    #FF8C00 70%,
+    #FFD700 100%
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * SIZE VARIANTS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.flameGlassCompact {
+  padding: var(--space-2, 8px) var(--space-3, 12px);
+  border-radius: var(--radius-lg, 8px);
+}
+
+.flameGlassCompact::before {
+  inset: -1.5px;
+  border-radius: 9.5px;
+}
+
+.flameGlassLarge {
+  padding: var(--space-6, 24px);
+  border-radius: var(--radius-2xl, 14px);
+}
+
+.flameGlassLarge::before {
+  inset: -3px;
+  border-radius: 17px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * REDUCED MOTION - Accessibility
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .flameGlassAnimated {
+    animation: none;
+  }
+  
+  .flameGlassActive:hover {
+    transform: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * SAFARI BACKDROP-FILTER FALLBACK
+ * 
+ * Older Safari versions may not render backdrop-filter correctly.
+ * This provides a solid fallback.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@supports not (backdrop-filter: blur(16px)) {
+  .flameGlassActive {
+    background: rgba(106, 0, 64, 0.75);
+  }
+}

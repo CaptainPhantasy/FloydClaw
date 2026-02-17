@@ -1,0 +1,180 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * AGENT CARD COMPONENT STYLES
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 
+ * Two visual states:
+ *   1. Default - Burgundy card with hover state
+ *   2. Active - Flame-glass effect with red/yellow/white glow
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * BASE CARD
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.agentCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4, 16px);
+  margin-bottom: var(--space-3, 12px);
+  cursor: pointer;
+  transition: var(--transition-all, all 0.2s ease-in-out);
+  border-radius: var(--radius-xl, 12px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * DEFAULT STATE (Non-active)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.agentCardDefault {
+  background: var(--color-burgundy-deep, #6A0040);
+}
+
+.agentCardDefault:hover {
+  background: var(--color-burgundy-rich, #8B0054);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * ACTIVE STATE (Flame-Glass)
+ * 
+ * Extends the flame-glass engine classes.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.agentCardActive {
+  /* Inherits from flameGlassActive */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * CONTENT LAYOUT
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.agentCardContent {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4, 16px);
+  /* CRITICAL: z-index ensures content stays above flame border */
+  position: relative;
+  z-index: 10;
+}
+
+.agentCardIcon {
+  font-size: 2rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.agentCardText {
+  display: flex;
+  flex-direction: column;
+}
+
+.agentCardTitle {
+  color: var(--color-white, #FFFFFF);
+  font-weight: var(--font-weight-bold, 700);
+  font-size: var(--font-size-lg, 1rem);
+  letter-spacing: var(--letter-spacing-wide, 0.025em);
+}
+
+.agentCardSubtitle {
+  color: var(--color-white-60, rgba(255, 255, 255, 0.6));
+  font-size: var(--font-size-sm, 0.85rem);
+  font-family: var(--font-family-mono, monospace);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * DEFAULT BADGE
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.agentCardBadge {
+  position: relative;
+  z-index: 10;
+}
+
+.agentCardBadgeText {
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: var(--font-weight-bold, 700);
+  letter-spacing: var(--letter-spacing-widest, 0.1em);
+  text-transform: uppercase;
+  padding: var(--space-1, 4px) var(--space-2, 8px);
+  border-radius: var(--radius-sm, 4px);
+}
+
+/* Badge in default state */
+.agentCardBadgeDefault .agentCardBadgeText {
+  color: var(--color-accent-pink, #FF007F);
+}
+
+/* Badge in active state */
+.agentCardBadgeActive .agentCardBadgeText {
+  color: var(--color-white, #FFFFFF);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * STATUS INDICATOR (Optional)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.agentCardStatus {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: var(--space-3, 12px);
+}
+
+.agentCardStatusOnline {
+  background: #00FF88;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+}
+
+.agentCardStatusOffline {
+  background: #FF4444;
+  box-shadow: 0 0 8px rgba(255, 68, 68, 0.4);
+}
+
+.agentCardStatusIdle {
+  background: #FFAA00;
+  box-shadow: 0 0 8px rgba(255, 170, 0, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * ANIMATION VARIANTS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.agentCardAnimated {
+  animation: cardEntry 0.3s ease-out;
+}
+
+@keyframes cardEntry {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * ACCESSIBILITY
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.agentCard:focus-visible {
+  outline: 2px solid var(--color-accent-cyan, #00FFFF);
+  outline-offset: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * REDUCED MOTION
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .agentCardAnimated {
+    animation: none;
+  }
+  
+  .agentCard {
+    transition: none;
+  }
+}

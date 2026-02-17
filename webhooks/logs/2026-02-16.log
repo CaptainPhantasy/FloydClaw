@@ -1,0 +1,4 @@
+[2026-02-16T02:45:32.067Z] [INFO] OpenClaw Webhook Server started {"host":"0.0.0.0","port":3000,"endpoints":["POST /webhooks/github","POST /webhooks/cicd","POST /webhooks/deploy","GET /health"]}
+[2026-02-16T02:45:59.968Z] [DEBUG] Request received {"method":"GET","path":"/"}
+[2026-02-16T02:46:00.464Z] [DEBUG] Request received {"method":"GET","path":"/favicon.ico"}
+[2026-02-16T08:51:12.181Z] [DEBUG] Request received {"method":"GET","path":"/api/health"}

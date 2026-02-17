@@ -1,0 +1,28 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * CARD HEADER STYLES
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cardHeaderTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cardHeaderAction {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

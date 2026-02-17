@@ -1,0 +1,218 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * AGENT DETAIL WORKSPACE STYLES
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+.agentDetailWorkspace {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * AGENT DETAIL HEADER
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+.agentDetailHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.agentDetailIcon {
+  font-size: 3rem;
+  filter: drop-shadow(0 2px 4px rgba(255, 0, 127, 0.5));
+}
+
+.agentDetailTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 0.25rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.agentDetailSubtitle {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-family: var(--font-family-mono, monospace);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * TABS NAVIGATION
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+.tabsNav {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.tabInactive {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tabInactive:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tabActive {
+  background: #FF007F;
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(255, 0, 127, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * TAB CONTENT PANEL
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+.tabContentPanel {
+  min-height: 300px;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tabContentEmpty {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * DATA GRID
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+.dataGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dataGridRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dataGridRow:last-child {
+  border-bottom: none;
+}
+
+.dataGridLabel {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.dataGridValue {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-family: var(--font-family-mono, monospace);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * AGENT DETAIL ACTIONS
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+.agentDetailActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+}
+
+.agentDetailSelect {
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.agentDetailSelect:focus {
+  border-color: #FF007F;
+  box-shadow: 0 0 8px rgba(255, 0, 127, 0.3);
+}
+
+.agentDetailButton {
+  padding: 0.5rem 1.5rem;
+  background: #FF007F;
+  border: none;
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255, 0, 127, 0.4);
+  transition: all 0.2s ease-in-out;
+}
+
+.agentDetailButton:hover {
+  background: #FF3399;
+  box-shadow: 0 4px 12px rgba(255, 0, 127, 0.5);
+  transform: translateY(-1px);
+}
+
+.agentDetailButton:active {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * RESPONSIVE DESIGN
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .agentDetailHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dataGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .agentDetailActions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .agentDetailSelect,
+  .agentDetailButton {
+    width: 100%;
+  }
+}

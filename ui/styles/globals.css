@@ -1,0 +1,267 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * FLOYD THE PHISH GLOBAL STYLES
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * Import order matters:
+ *   1. Variables (design tokens)
+ *   2. Flame-Glass engine
+ *   3. Base/reset styles
+ *   4. Utility classes
+ */
+
+@import './variables.css';
+@import './flame-glass.css';
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * CSS RESET (Minimal)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-white);
+  margin: 0;
+  background-attachment: fixed;
+  background-image:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(255, 0, 127, 0.85) 0%,
+      rgba(139, 0, 84, 0.95) 50%,
+      rgba(20, 0, 15, 0.98) 100%
+    ),
+    url('data:image/svg+xml,%3Csvg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="200" height="100" fill="%231a1a1a"/%3E%3C!-- Staggered brick pattern --%3E%3Crect x="0" y="0" width="48" height="23" fill="%233a3a3a"/%3E%3Crect x="52" y="0" width="48" height="23" fill="%234a4a4a"/%3E%3Crect x="104" y="0" width="48" height="23" fill="%233a3a3a"/%3E%3Crect x="156" y="0" width="48" height="23" fill="%234a4a4a"/%3E%3Crect x="24" y="25" width="48" height="23" fill="%234a4a4a"/%3E%3Crect x="76" y="25" width="48" height="23" fill="%233a3a3a"/%3E%3Crect x="128" y="25" width="48" height="23" fill="%234a4a4a"/%3E%3Crect x="180" y="25" width="20" height="23" fill="%233a3a3a"/%3E%3Crect x="0" y="25" width="20" height="23" fill="%234a4a4a"/%3E%3Crect x="0" y="50" width="48" height="23" fill="%233a3a3a"/%3E%3Crect x="52" y="50" width="48" height="23" fill="%234a4a4a"/%3E%3Crect x="104" y="50" width="48" height="23" fill="%233a3a3a"/%3E%3Crect x="156" y="50" width="48" height="23" fill="%234a4a4a"/%3E%3Crect x="24" y="75" width="48" height="23" fill="%234a4a4a"/%3E%3Crect x="76" y="75" width="48" height="23" fill="%233a3a3a"/%3E%3Crect x="128" y="75" width="48" height="23" fill="%234a4a4a"/%3E%3Crect x="180" y="75" width="20" height="23" fill="%233a3a3a"/%3E%3Crect x="0" y="75" width="20" height="23" fill="%234a4a4a"/%3E%3C!-- Mortar lines --%3E%3Crect x="0" y="24" width="200" height="1" fill="%230a0a0a"/%3E%3Crect x="0" y="49" width="200" height="1" fill="%230a0a0a"/%3E%3Crect x="0" y="74" width="200" height="1" fill="%230a0a0a"/%3E%3Crect x="0" y="99" width="200" height="1" fill="%230a0a0a"/%3E%3Crect x="49" y="0" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="103" y="0" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="155" y="0" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="23" y="25" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="75" y="25" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="127" y="25" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="179" y="25" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="49" y="50" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="103" y="50" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="155" y="50" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="23" y="75" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="75" y="75" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="127" y="75" width="1" height="24" fill="%230a0a0a"/%3E%3Crect x="179" y="75" width="1" height="24" fill="%230a0a0a"/%3E%3C/svg%3E');
+  background-repeat: repeat;
+  background-blend-mode: multiply;
+  background-color: #8B0054;
+  min-height: 100vh;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * FORM ELEMENT RESETS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * UTILITY CLASSES
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Layout */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+
+/* Spacing */
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mt-6 { margin-top: var(--space-6); }
+
+/* Text */
+.text-white { color: var(--color-white); }
+.text-white-60 { color: var(--color-white-60); }
+.text-cyan { color: var(--color-accent-cyan); }
+.text-pink { color: var(--color-accent-pink); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-xs { font-size: var(--font-size-xs); }
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-mono { font-family: var(--font-family-mono); }
+.tracking-wide { letter-spacing: var(--letter-spacing-wide); }
+.tracking-widest { letter-spacing: var(--letter-spacing-widest); }
+.uppercase { text-transform: uppercase; }
+.drop-shadow { filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); }
+
+/* Transitions */
+.transition-all {
+  transition: var(--transition-all);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * SCROLLBAR STYLING (Webkit)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 127, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 0, 127, 0.5);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * SELECTION STYLING
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+::selection {
+  background: rgba(255, 0, 127, 0.4);
+  color: var(--color-white);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * FOCUS VISIBLE (Accessibility)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-cyan);
+  outline-offset: 2px;
+}
+
+/* Remove outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * PAGE LAYOUT STYLES
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Cron Jobs Page Grid */
+.cron-jobs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.cron-jobs-column-left,
+.cron-jobs-column-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Agents Page Layout */
+.agents-layout {
+  display: flex;
+  gap: 2rem;
+}
+
+.agents-column-left {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.agents-column-right {
+  width: 66.67%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Instances Page */
+.instances-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Cron Jobs Page */
+.cron-jobs-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Agents Page */
+.agents-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * RESPONSIVE PAGE LAYOUTS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .cron-jobs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .agents-layout {
+    flex-direction: column;
+  }
+
+  .agents-column-left,
+  .agents-column-right {
+    width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * BUTTON STYLES
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.btn-primary {
+  padding: 0.5rem 1rem;
+  background: #FF007F;
+  border: none;
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255, 0, 127, 0.4);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: #FF3399;
+  box-shadow: 0 4px 12px rgba(255, 0, 127, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
