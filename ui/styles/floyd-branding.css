@@ -1,0 +1,699 @@
+/* Floyd The PHISH Branding Overrides */
+/* ALL colors from Visual Elements Breakdown - no made up values */
+
+:root {
+  /* === DOMINANT (60%) - Neon Fuchsia/Magenta === */
+  /* Bright center: #FF007F | Shadow edges: #8B0054 | Glow: #D100D1 */
+  --bg: #8B0054;
+  --bg-accent: #8B0054;
+  --bg-elevated: #FF007F;
+  --bg-hover: #FF007F;
+  --bg-muted: #8B0054;
+
+  /* === NEON PURPLE for floating content frames === */
+  /* Bright neon purple: #BF00FF | Shadow edges: #6A0099 | Glow: #9B59FF */
+  --card: #6A0099;
+  --card-foreground: #FFFFFF;
+  --card-highlight: rgba(191, 0, 255, 0.2);
+  --popover: #6A0099;
+  --popover-foreground: #FFFFFF;
+  --panel: #6A0099;
+  --panel-strong: #8B00AA;
+  --panel-hover: #BF00FF;
+
+  /* Chrome elements (header, nav) stay fuchsia */
+  --chrome: rgba(139, 0, 84, 0.97);
+  --chrome-strong: rgba(139, 0, 84, 0.99);
+
+  --text: #FFFFFF;
+  --text-strong: #FFFFFF;
+  --chat-text: #FFFFFF;
+  --muted: #E0B6FF;
+  --muted-strong: #F0D6FF;
+  --muted-foreground: #E0B6FF;
+
+  /* === ACCENT - Fuchsia === */
+  --ring: #FF007F;
+  --accent: #FF007F;
+  --accent-hover: #D100D1;
+  --accent-muted: #D100D1;
+  --accent-subtle: rgba(255, 0, 127, 0.25);
+  --accent-foreground: #FFFFFF;
+  --accent-glow: rgba(209, 0, 209, 0.5);
+
+  --primary: #FF007F;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #8B0054;
+  --secondary-foreground: #FFFFFF;
+
+  /* === SECONDARY (30%) === */
+  /* Electric Cyan: #00FFFF (bright), #00AEEF (darker) */
+  --accent-2: #00FFFF;
+  --accent-2-muted: rgba(0, 174, 239, 0.8);
+  --accent-2-subtle: rgba(0, 255, 255, 0.2);
+
+  /* Fire Gradient: #FF0000 (top) → #FFD700 (base) */
+  --ok: #22c55e;
+  --ok-muted: rgba(34, 197, 94, 0.75);
+  --ok-subtle: rgba(34, 197, 94, 0.15);
+
+  --destructive: #FF0000;
+  --destructive-foreground: #FFFFFF;
+  --warn: #FFD700;
+  --warn-muted: rgba(255, 215, 0, 0.8);
+  --warn-subtle: rgba(255, 215, 0, 0.2);
+  --danger: #FF0000;
+  --danger-muted: rgba(255, 0, 0, 0.75);
+  --danger-subtle: rgba(255, 0, 0, 0.2);
+
+  --info: #00FFFF;
+
+  /* Focus uses neon purple glow */
+  --focus: rgba(191, 0, 255, 0.35);
+
+  /* Midnight Blue structural: #000033 to #0B0B45 */
+  --midnight-dark: #000033;
+  --midnight-block: #0B0B45;
+
+  /* Border */
+  --border: #0B0B45;
+  --border-strong: #000033;
+  --border-hover: #9B59FF;
+  --input: #0B0B45;
+
+  --grid-line: rgba(155, 89, 255, 0.15);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(191, 0, 255, 0.3);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(191, 0, 255, 0.3);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(191, 0, 255, 0.3);
+  --shadow-glow: 0 0 40px rgba(155, 89, 255, 0.6);
+}
+
+/* === BODY BACKGROUND - neon brick + radial vignette === */
+/* Brick pattern + Bright center #FF007F → Glow #D100D1 → Shadow edges #8B0054 */
+html, body {
+  background-color: #0d0d0d !important;
+  background-image:
+    radial-gradient(ellipse at center, rgba(255, 0, 127, 0.4) 0%, rgba(139, 0, 84, 0.6) 70%, transparent 100%),
+    url("data:image/svg+xml,%3Csvg width='80' height='40' viewBox='0 0 80 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%238B0054' fill-opacity='0.4'%3E%3Cpath d='M0 38h80v2H0zM0 18h80v2H0zM0 0h80v2H0zM0 0h2v40H0zM20 0h2v40h-2zM40 0h2v40h-2zM60 0h2v40h-2zM80 0h2v40h-2z'/%3E%3C/g%3E%3C/svg%3E");
+  background-blend-mode: multiply !important;
+  background-size: 100% 100%, 80px 40px !important;
+  background-attachment: fixed !important;
+  background-position: center !important;
+}
+
+/* === LIGHT THEME === */
+:root[data-theme=light] {
+  --bg: #FFD6E7;
+  --bg-accent: #FFB6D2;
+  --bg-elevated: #FFFFFF;
+  --bg-hover: #FF007F;
+  --bg-muted: #FFB6D2;
+
+  --card: #FFFFFF;
+  --card-foreground: #0B0B45;
+  --popover: #FFFFFF;
+  --popover-foreground: #0B0B45;
+  --panel: #FFD6E7;
+  --panel-strong: #FFB6D2;
+  --panel-hover: #FF007F;
+
+  --chrome: rgba(255, 214, 231, 0.97);
+
+  --ring: #8B0054;
+  --accent: #8B0054;
+  --accent-hover: #FF007F;
+  --accent-muted: #D100D1;
+  --accent-subtle: rgba(139, 0, 84, 0.2);
+  --accent-glow: rgba(209, 0, 209, 0.3);
+
+  --primary: #8B0054;
+  --primary-foreground: #FFFFFF;
+
+  --border: #FFB6D2;
+  --border-strong: #D100D1;
+  --border-hover: #FF007F;
+  --input: #FFB6D2;
+
+  --text: #0B0B45;
+  --text-strong: #000033;
+  --muted: #8B0054;
+  --muted-strong: #000033;
+}
+
+/* === GLOW ANIMATION === */
+@keyframes floyd-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 0, 127, 0.6), 0 0 20px rgba(209, 0, 209, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.8), 0 0 40px rgba(209, 0, 209, 0.6);
+  }
+}
+
+/* Status dot */
+.statusDot {
+  background: #FF007F !important;
+  box-shadow: 0 0 12px #D100D1;
+  animation: floyd-pulse 2s ease-in-out infinite;
+}
+
+/* Active nav */
+.nav-item.active {
+  background: rgba(255, 0, 127, 0.25) !important;
+  border-left: 3px solid #FF007F !important;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.5) !important;
+  animation: flameGlass 3s ease infinite !important;
+}
+
+/* Pills */
+.pill {
+  border-color: rgba(255, 0, 127, 0.5) !important;
+}
+
+.pill:hover {
+  border-color: #FF007F !important;
+  box-shadow: 0 0 20px rgba(209, 0, 209, 0.5);
+}
+
+/* Config subnav */
+.config-subnav__item.active {
+  color: #FF007F !important;
+  border-color: #D100D1 !important;
+  background: rgba(255, 0, 127, 0.2) !important;
+}
+
+/* Toggle */
+.cfg-toggle input:checked + .cfg-toggle__track {
+  background: rgba(255, 0, 127, 0.25) !important;
+  border-color: #D100D1 !important;
+}
+
+.cfg-toggle input:checked + .cfg-toggle__track:after {
+  background: #FF007F !important;
+}
+
+/* Links - cyan #00FFFF and #00AEEF */
+a {
+  color: #00FFFF;
+}
+
+a:hover {
+  color: #00AEEF;
+  text-shadow: 0 0 12px #D100D1;
+}
+
+/* Focus - neon purple glow stroke */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px #9B59FF, 0 0 25px rgba(191, 0, 255, 0.6);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #8B0054 !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF007F !important;
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 0, 127, 0.4);
+  color: #FFFFFF;
+}
+
+/* Brand title - cyan tiles #00FFFF / #00AEEF */
+.brand-title {
+  color: #00FFFF !important;
+  text-shadow: 0 0 18px #00AEEF;
+}
+
+/* Page titles */
+.page-title {
+  color: #00FFFF !important;
+  text-shadow: 0 0 25px #00AEEF;
+}
+
+/* Fire text - #FF0000 (top) → #FFD700 (base) */
+.fire-text {
+  background: linear-gradient(to top, #FFD700, #FF0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === CONTRAST FIXES === */
+/* Ensure text is readable on all backgrounds */
+.card,
+.config-section-card,
+.cfg-object,
+.cfg-array,
+.panel,
+.popover,
+.dropdown-menu {
+  color: #FFFFFF !important;
+}
+
+/* === NEON PURPLE FLOATING FRAMES === */
+/* Cards, panels, and content containers use neon purple */
+.card {
+  background: rgba(106, 0, 153, 0.85) !important;
+  border-color: #9B59FF !important;
+  box-shadow: 0 0 20px rgba(191, 0, 255, 0.3), 0 0 0 1px rgba(155, 89, 255, 0.4) !important;
+}
+
+.card:hover {
+  background: rgba(127, 0, 178, 0.9) !important;
+  border-color: #BF00FF !important;
+  box-shadow: 0 0 30px rgba(191, 0, 255, 0.5), 0 0 0 1px rgba(155, 89, 255, 0.6) !important;
+}
+
+.config-section-card {
+  background: rgba(106, 0, 153, 0.75) !important;
+  border-color: #9B59FF !important;
+  box-shadow: 0 0 20px rgba(191, 0, 255, 0.25) !important;
+}
+
+.config-section-card:hover {
+  background: rgba(127, 0, 178, 0.85) !important;
+  border-color: #BF00FF !important;
+  box-shadow: 0 0 25px rgba(191, 0, 255, 0.4) !important;
+}
+
+/* Headers - cyan */
+h1, h2, h3 {
+  color: #00FFFF;
+  text-shadow: 0 0 30px #00AEEF;
+}
+
+/* === CHAT STYLING FIXES === */
+/* Fix pink text on pink cards */
+.chat-message,
+.message-content,
+.chat-text,
+.user-message,
+.assistant-message,
+.system-message {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Chat container - neon purple frame */
+.chat-thread,
+.chat {
+  background: rgba(106, 0, 153, 0.4) !important;
+  border: 1px solid rgba(155, 89, 255, 0.5) !important;
+  box-shadow: 0 0 20px rgba(191, 0, 255, 0.2) !important;
+}
+
+/* Message backgrounds - neon purple tint */
+.message-bubble,
+.chat-bubble,
+.user-message .bubble,
+.assistant-message .bubble {
+  background: rgba(106, 0, 153, 0.7) !important;
+  border: 1px solid rgba(155, 89, 255, 0.5) !important;
+}
+
+/* User messages - slightly lighter purple */
+.user-message .bubble {
+  background: rgba(140, 0, 180, 0.8) !important;
+  border-color: #BF00FF !important;
+}
+
+/* Assistant messages - slightly darker purple */
+.assistant-message .bubble {
+  background: rgba(80, 0, 120, 0.85) !important;
+  border-color: #8B00AA !important;
+}
+
+/* Structural backing elements - purple/midnight blend */
+.config-section-card,
+.cfg-toggle-row,
+.cfg-object,
+.cfg-array {
+  border-color: #9B59FF !important;
+}
+
+.config-section-card__header,
+.cfg-array__header,
+.cfg-map__header {
+  background: rgba(0, 0, 51, 0.9) !important;
+  border-color: #9B59FF !important;
+  box-shadow: 0 0 15px rgba(191, 0, 255, 0.3) !important;
+}
+
+/* Panel/overlay elements - neon purple */
+.panel,
+.popover,
+.dropdown-menu,
+.sidebar-panel {
+  background: rgba(106, 0, 153, 0.9) !important;
+  border-color: #9B59FF !important;
+  box-shadow: 0 0 25px rgba(191, 0, 255, 0.4) !important;
+}
+
+/* === FLAME-GLASS EFFECTS === */
+@keyframes flameGlass {
+  0%, 100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 8px rgba(191, 0, 255, 0.6), 0 0 20px rgba(155, 89, 255, 0.4);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 15px rgba(191, 0, 255, 0.8), 0 0 30px rgba(155, 89, 255, 0.6);
+  }
+}
+
+/* Flame-Glass for cards */
+.config-section-card,
+.cfg-object,
+.cfg-array {
+  position: relative !important;
+}
+
+.config-section-card::before,
+.cfg-object::before,
+.cfg-array::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #FF0000, #FF6600, #FFFF00, #FF0000, #FF6600, #FFFF00);
+  background-size: 400% 400% !important;
+  border-radius: inherit;
+  z-index: -1;
+  animation: flameGlass 3s ease infinite;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Flame-Glass for buttons */
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+/* Fire yellow outline animation */
+@keyframes fireYellowOutline {
+  0%, 100% {
+    border-color: #FFD700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 0 1px #FFD700;
+  }
+  50% {
+    border-color: #FFA500;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 0 1px #FFA500;
+  }
+}
+
+/* Apply fire yellow outline to buttons on hover */
+button:hover,
+.btn:hover {
+  border: 1px solid #FFD700 !important;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.7), 0 0 0 1px #FFD700 !important;
+  animation: fireYellowOutline 1.5s ease-in-out infinite !important;
+}
+
+/* Active/selected buttons get the fire treatment */
+button.active,
+button:active,
+button.selected,
+.btn.active,
+.btn:active,
+.btn.selected {
+  background: #FF6600 !important;
+  border: 1px solid #FFD700 !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7), 0 0 0 2px #FFD700 !important;
+  animation: fireYellowPulse 2s ease-in-out infinite !important;
+}
+
+/* Nav items with fire yellow outline */
+.nav-item {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover::before {
+  border-color: #FFD700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  animation: fireYellowPulse 2s ease-in-out infinite;
+}
+
+/* Active nav item gets the fire treatment via ::before too */
+.nav-item.active::before {
+  border-color: #FFD700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+  animation: fireYellowPulse 2s ease-in-out infinite;
+}
+
+@keyframes fireYellowPulse {
+  0%, 100% {
+    border-color: #FFD700;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    border-color: #FFA500;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+  }
+}
+
+/* === GLOBAL NEON PURPLE FOR ALL FLOATING FRAMES === */
+/* This ensures ALL content areas that hover above the background use neon purple,
+   while header/nav stay fuchsia for contrast */
+
+/* Main content area */
+.content {
+  background: rgba(106, 0, 153, 0.15) !important;
+}
+
+/* All card-like elements */
+.stat,
+.note-grid > *,
+.list-item,
+.account-card,
+.agent-row,
+.agent-file-row,
+.agent-tool-row,
+.cron-job,
+.log-stream {
+  background: rgba(106, 0, 153, 0.7) !important;
+  border-color: #9B59FF !important;
+  box-shadow: 0 0 15px rgba(191, 0, 255, 0.2) !important;
+}
+
+.stat:hover,
+.list-item:hover,
+.account-card:hover,
+.agent-row:hover,
+.agent-file-row:hover,
+.agent-tool-row:hover,
+.cron-job:hover {
+  background: rgba(127, 0, 178, 0.85) !important;
+  border-color: #BF00FF !important;
+  box-shadow: 0 0 25px rgba(191, 0, 255, 0.4) !important;
+}
+
+/* Chat elements - neon purple */
+.chat-compose,
+.chat-attachments,
+.chat-queue,
+.chat-tool-card,
+.chat-reading-indicator {
+  background: rgba(106, 0, 153, 0.7) !important;
+  border-color: #9B59FF !important;
+}
+
+.chat-compose__field textarea,
+.chat-bubble {
+  background: rgba(80, 0, 120, 0.7) !important;
+  border-color: #8B00AA !important;
+}
+
+/* Modal/overlay elements */
+.exec-approval-card,
+.qr-wrap {
+  background: rgba(106, 0, 153, 0.95) !important;
+  border-color: #9B59FF !important;
+  box-shadow: 0 0 40px rgba(191, 0, 255, 0.5) !important;
+}
+
+/* Form elements */
+.field input,
+.field textarea,
+.field select,
+.cfg-input,
+.cfg-textarea,
+.cfg-select {
+  background: rgba(80, 0, 120, 0.6) !important;
+  border-color: #8B00AA !important;
+  color: #FFFFFF !important;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus,
+.cfg-input:focus,
+.cfg-textarea:focus,
+.cfg-select:focus {
+  background: rgba(106, 0, 153, 0.8) !important;
+  border-color: #BF00FF !important;
+  box-shadow: 0 0 0 3px rgba(191, 0, 255, 0.3), 0 0 20px rgba(191, 0, 255, 0.4) !important;
+}
+
+/* Tables */
+.table-row {
+  background: rgba(106, 0, 153, 0.6) !important;
+  border-color: #9B59FF !important;
+}
+
+.table-row:hover {
+  background: rgba(127, 0, 178, 0.8) !important;
+  border-color: #BF00FF !important;
+}
+
+/* Pills and chips */
+.pill,
+.chip {
+  background: rgba(106, 0, 153, 0.6) !important;
+  border-color: #9B59FF !important;
+}
+
+.pill:hover,
+.chip:hover {
+  background: rgba(127, 0, 178, 0.8) !important;
+  border-color: #BF00FF !important;
+}
+
+/* Code blocks */
+.code-block {
+  background: rgba(40, 0, 60, 0.9) !important;
+  border-color: #9B59FF !important;
+}
+
+/* Log rows */
+.log-row:hover {
+  background: rgba(127, 0, 178, 0.5) !important;
+}
+
+/* Sidebar panels */
+.sidebar-panel,
+.sidebar-content {
+  background: rgba(106, 0, 153, 0.85) !important;
+  border-color: #9B59FF !important;
+}
+
+/* Buttons that aren't primary */
+.btn:not(.primary) {
+  background: rgba(106, 0, 153, 0.7) !important;
+  border-color: #9B59FF !important;
+}
+
+.btn:not(.primary):hover {
+  background: rgba(127, 0, 178, 0.9) !important;
+  border-color: #BF00FF !important;
+  box-shadow: 0 0 20px rgba(191, 0, 255, 0.4) !important;
+}
+
+/* Active/selected buttons - fire orange with yellow glowing ring */
+.btn.active,
+.btn:active,
+.btn.selected {
+  background: #FF6600 !important;
+  border: 1px solid #FFD700 !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7), 0 0 0 2px #FFD700 !important;
+  animation: fireYellowPulse 2s ease-in-out infinite !important;
+}
+
+/* Also apply to primary button active state */
+.btn.primary.active,
+.btn.primary:active,
+.btn.primary.selected {
+  background: #FF6600 !important;
+  border: 1px solid #FFD700 !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7), 0 0 0 2px #FFD700 !important;
+  animation: fireYellowPulse 2s ease-in-out infinite !important;
+}
+
+/* Callouts */
+.callout {
+  background: rgba(106, 0, 153, 0.5) !important;
+  border-color: #9B59FF !important;
+}
+
+/* === HEADER & NAV STAY FUCHSIA (for contrast) === */
+.topbar {
+  background: rgba(139, 0, 84, 0.98) !important;
+  border-bottom-color: #FF007F !important;
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.3) !important;
+}
+
+.nav {
+  background: rgba(139, 0, 84, 0.95) !important;
+  border-right-color: #FF007F !important;
+}
+
+.nav-item:hover {
+  background: rgba(255, 0, 127, 0.3) !important;
+  border: 1px solid #FFD700 !important;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 0 1px #FFD700 !important;
+  animation: fireYellowOutline 1.5s ease-in-out infinite !important;
+}
+
+/* Active nav item - fire orange with yellow glowing ring */
+.nav-item.active {
+  background: #FF6600 !important;
+  border: 1px solid #FFD700 !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7), 0 0 0 2px #FFD700 !important;
+  animation: fireYellowPulse 2s ease-in-out infinite !important;
+}
+
+/* === PURPLE GLOW ANIMATION FOR FLOATING ELEMENTS === */
+@keyframes purplePulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(191, 0, 255, 0.3), 0 0 0 1px rgba(155, 89, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(191, 0, 255, 0.5), 0 0 0 1px rgba(155, 89, 255, 0.6);
+  }
+}
+
+.card,
+.config-section-card,
+.chat-bubble {
+  animation: purplePulse 4s ease-in-out infinite;
+}
